@@ -9,7 +9,7 @@
 <sql:query dataSource="${ds}" sql="select * from images limit 10" var="results" />
 <!--  Use for each loop and access rows from the var results above -->
 <c:forEach var="image" items="${results.rows }">
-
+<p/><img src="${pageContext.request.contextPath}/pics/${image.stem}.${image.image_extension}"/>
 <p>${image.stem}.${image.image_extension }</p>
 
 </c:forEach>

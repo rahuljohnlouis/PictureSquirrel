@@ -85,10 +85,11 @@ img {
 }
 
 #footer {
-	position: absolute;
+	position: relative;
 	bottom:0px;
-	
-	width: 90%;
+	background-repeat: repeat;
+	background-attachment:scroll;
+	width: 100%;
 	background-color: white;
 	text-align: left;
 	border-top: 1px solid gray;
