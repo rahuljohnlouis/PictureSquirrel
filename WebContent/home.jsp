@@ -17,7 +17,11 @@
 	<tr>
 	</c:if>
 	<c:set scope="page" var="imagename" value="${image.stem}.${image.image_extension}"/>
-	<td><img width="80"src="${pageContext.request.contextPath}/pics/${imagename}"/></td>
+	<td>
+	<a href="<c:url value="/gallery?action=image&image=${image.id}"/>">
+		<img width="80"src="${pageContext.request.contextPath}/pics/${imagename}"/>
+	</a>
+	</td>
 	<!--  <p>${image.stem}.${image.image_extension }</p>-->
 	<c:if test="${row.index+1 %tablewidth == 0 }">
 	<tr>
