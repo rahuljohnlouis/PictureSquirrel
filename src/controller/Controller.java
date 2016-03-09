@@ -1,6 +1,7 @@
 package controller;
 
 import java.io.IOException;
+import java.util.HashMap;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -18,7 +19,21 @@ public class Controller extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		request.getRequestDispatcher("/home.jsp").forward(request, response);
+		//Get the action parameter
+		String action = request.getParameter("action");
+		
+		
+		//Build a map of action parameter to page
+		HashMap<String,String> actionMap = new HashMap<>();
+		actionMap.put("image", "/image.jsp");
+		actionMap.put("home", "/home.jsp");
+		
+		//If the action parameter is null or the map doesn't contain
+		//a page for this action, set the action to the home page
+		if(action==null || !actionMap.containsKey(action))
+			action="home";
+		request.getRequestDispatcher(actionMap.get(action)).forward(request, response);
+		//request.getRequestDispatcher("/home.jsp").forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
