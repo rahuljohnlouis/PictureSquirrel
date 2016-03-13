@@ -18,7 +18,7 @@
 <c:set scope="page" var="image" value="${results.rows[0]}"/>
 <c:set scope="page" var="imagename" value="${image.stem}.${image.image_extension}"/>
 
-<H2>${fn:toUpperCase(fn:substring(image.stem,0,1))}${fn:toLowerCase(fn:substring(image.stem,1,-1))} </H2>
+<H2><c:out value="${fn:toUpperCase(fn:substring(image.stem,0,1))}${fn:toLowerCase(fn:substring(image.stem,1,-1))}" /> </H2>
 
 <table style="border: none;">
 <tr>
