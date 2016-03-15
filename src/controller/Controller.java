@@ -26,6 +26,7 @@ public class Controller extends HttpServlet {
 		//Build a map of action parameter to page
 		HashMap<String,String> actionMap = new HashMap<>();
 		actionMap.put("image", "/image.jsp");
+		actionMap.put("rate", "/image.jsp");
 		actionMap.put("home", "/home.jsp");
 		
 		//If the action parameter is null or the map doesn't contain
